@@ -10,8 +10,8 @@ export let user: validUser;
 export const products:validProduct[] = await getProducts()
 
 
-const header = document.querySelector(".content-header") as HTMLElement;
-const mainBody = document.querySelector(".main-content") as HTMLElement;
+const header = <HTMLElement>document.querySelector(".content-header");
+const mainBody = <HTMLElement>document.querySelector(".main-content");
 
 
 
@@ -40,13 +40,13 @@ export function LoginUser() {
       loginForm?.addEventListener("submit", (e) => {
         e.preventDefault();
         const name = (
-          document.querySelector("#login__name") as HTMLInputElement
+          <HTMLInputElement>document.querySelector("#login__name")
         ).value;
         const email = (
-          document.querySelector("#login__email") as HTMLInputElement
+          <HTMLInputElement>document.querySelector("#login__email")
         ).value;
         const password = (
-          document.querySelector("#login__password") as HTMLInputElement
+          <HTMLInputElement>document.querySelector("#login__password")
         ).value;
         user = new User(name, email, password);
         storePage();

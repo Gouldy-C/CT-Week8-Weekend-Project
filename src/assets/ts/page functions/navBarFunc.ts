@@ -5,7 +5,7 @@ import { validUser } from "../utils/types";
 
 
 export function navbarReset(user: validUser): void {
-  const navbar = document.querySelector(".navbar-nav") as HTMLElement;
+  const navbar = <HTMLElement>document.querySelector(".navbar-nav")
   if (user) {
     navbar.innerHTML = `<li class="nav-item">
       <button class="nav-link nav__store text-light fs-5">Store</button>
